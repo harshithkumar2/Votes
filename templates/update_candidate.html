@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %}UPDATE CANDIDATE{% endblock %} {% block body %}
+<div class="row row-cols-1 row-cols-md-3 g-2 text-center mx-2">
+	{% for i in data %}
+	<div class="col">
+		<div class="card p-3 m-3 zooom" style="width: 20rem; background-color: #eee2dc">
+			<img
+				src="/static/Uploaded_images/{{i['logo']}}"
+				height="155px"
+				width="105px"
+				class="card-img-top"
+				alt="..."
+			/>
+			<div class="card-body">
+				<h5 class="card-title fw-bolder">{{i['name']}}</h5>
+				<p class="card-text fw-bold">{{i['slogan']}}</p>
+				<div class="text-center">
+					<a href="/edit/{{i['candidate_id']}}" class="btn btttn mx-2 fw-bold">EDIT</a>
+					<a href="/delete/{{i['candidate_id']}}" class="btn btttn fw-bold">DELETE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock body %}
